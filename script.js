@@ -14,15 +14,11 @@ function totalBorrowedCalculator(borrowed) {
     }
 }
 
-function paybackTimeCalculator(monthlyPaymentPercentage) {
+function paybackTimeCalculator(monthlyPaymentPercentage, salary, borrowed) {
     let percentageAsDecimal = monthlyPaymentPercentage / 100
-    let months = 0
-    let ammountPaid = 0
-    while (ammountPaid < 1) {
-        ammountPaid = ammountPaid + percentageAsDecimal
-        months++
-    }
-    return months
+    let monthlyPayment = percentageAsDecimal * salary
+    let totalBorrowed = totalBorrowedCalculator(borrowed)
+    return totalBorrowed / monthlyPayment
 }
 
 form.addEventListener("submit", (event) => {
@@ -32,5 +28,5 @@ form.addEventListener("submit", (event) => {
     let paymentPercentage = form.repaymentPercentage.value
     document.getElementById('admin-fee-target').innerText = adminFeeCalculator(Number(amountToBorrow))
     document.getElementById('total-borrowed-target').innerText = totalBorrowedCalculator(Number(amountToBorrow))
-    document.getElementById('payment-time-target').innerText = paybackTimeCalculator(Number(paymentPercentage))
+    document.getElementById('payment-time-target').innerText = paybackTimeCalculator(Number(paymentPercentage),Number(currentSalary),Number(amountToBorrow))
 })
