@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Finance Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <h1>Finance Calculator</h1>
+    </div>
+    <form>
+        <div class="row justify-content-center">
+            <label class="label"> Amount to borrow:
+                <input type="number" name="amountToBorrow">
+            </label>
+        </div>
+        <div class="row justify-content-center">
+            <label class="label"> Your current salary:
+                <input type="number" name="currentSalary">
+            </label>
+        </div>
+        <div class="row justify-content-center">
+            <label class="label"> Monthly percentage :
+                <input type="number" name="repaymentPercentage" value="10">
+            </label>
+        </div>
+        <div class="row justify-content-center">
+            <input class="btn btn-primary" type="submit" value="Submit!">
+        </div>
+    </form>
+</div>
+</body>
+</html>
