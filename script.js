@@ -1,9 +1,5 @@
 const form = document.querySelector('form')
 
-function adminFeeCalculator(borrowed) {
-    return borrowed * 0.05
-}
-
 function totalBorrowedCalculator(borrowed) {
     if (borrowed < 6400) {
         return borrowed
@@ -26,7 +22,7 @@ form.addEventListener("submit", (event) => {
     let amountToBorrow = form.amountToBorrow.value
     let currentSalary = form.currentSalary.value
     let paymentPercentage = form.repaymentPercentage.value
-    document.getElementById('admin-fee-target').innerText = adminFeeCalculator(Number(amountToBorrow))
+    document.getElementById('admin-fee-target').innerText = totalBorrowedCalculator(Number(amountToBorrow)) * 0.05
     document.getElementById('total-borrowed-target').innerText = totalBorrowedCalculator(Number(amountToBorrow))
-    document.getElementById('payment-time-target').innerText = paybackTimeCalculator(Number(paymentPercentage),Number(currentSalary),Number(amountToBorrow))
+    document.getElementById('payment-time-target').innerText = paybackTimeCalculator(Number(paymentPercentage), Number(currentSalary), Number(amountToBorrow))
 })
