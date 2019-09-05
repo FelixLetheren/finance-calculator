@@ -23,11 +23,11 @@ form.addEventListener("submit", (event) => {
     let amountToBorrow = form.amountToBorrow.value
     let currentSalary = form.currentSalary.value
     let paymentPercentage = form.repaymentPercentage.value
-    if(amountToBorrow <= 8000 && amountToBorrow > 0 && paymentPercentage > 10 && paymentPercentage < 100) {
+    if(amountToBorrow <= 8000 && amountToBorrow > 0 && paymentPercentage >= 10 && paymentPercentage <= 100) {
         getResults(amountToBorrow,currentSalary,paymentPercentage)
     }
     else{
-        document.getElementById('message-target').innerHTML = '<div class="alert alert-danger">Error! Please try again.</div>'
+        document.getElementById('message-target').innerHTML = '<div class="alert alert-danger">Error! Please check fields and try again.</div>'
     }
 })
 
