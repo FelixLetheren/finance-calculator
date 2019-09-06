@@ -20,7 +20,7 @@ function paybackTimeCalculator(monthlyPaymentPercentage, salary, borrowed) {
 function getResults(amountToBorrow, currentSalary, paymentPercentage) {
     document.getElementById('admin-fee-target').innerHTML = '<p>£' + (totalBorrowedCalculator(Number(amountToBorrow)) * 0.05).toFixed(2) + '</p>'
     document.getElementById('total-borrowed-target').innerHTML = '<p>£' +  totalBorrowedCalculator(Number(amountToBorrow)).toFixed(2) + "</p>"
-    document.getElementById('payment-time-target').innerHTML = '<p>' + paybackTimeCalculator(Number(paymentPercentage), Number(currentSalary), Number(amountToBorrow)).toFixed(1) + ' Months</p>'
+    document.getElementById('payment-time-target').innerHTML = '<p>' + Math.ceil(paybackTimeCalculator(Number(paymentPercentage), Number(currentSalary), Number(amountToBorrow))) + ' Months</p>'
 }
 
 form.addEventListener("submit", (event) => {
